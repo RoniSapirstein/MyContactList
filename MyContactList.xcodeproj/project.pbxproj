@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		F07D9B491B937D9A00203AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F07D9B481B937D9A00203AC5 /* main.m */; };
 		F07D9B4C1B937D9A00203AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F07D9B4B1B937D9A00203AC5 /* AppDelegate.m */; };
-		F07D9B4F1B937D9A00203AC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07D9B4E1B937D9A00203AC5 /* ViewController.m */; };
 		F07D9B521B937D9A00203AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07D9B501B937D9A00203AC5 /* Main.storyboard */; };
 		F07D9B541B937D9A00203AC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07D9B531B937D9A00203AC5 /* Images.xcassets */; };
 		F07D9B571B937D9A00203AC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F07D9B551B937D9A00203AC5 /* LaunchScreen.xib */; };
 		F07D9B631B937D9A00203AC5 /* MyContactListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F07D9B621B937D9A00203AC5 /* MyContactListTests.m */; };
+		F0C5DD7D1B98D0590011D739 /* ViewContantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C5DD7C1B98D0590011D739 /* ViewContantViewController.m */; };
+		F0C7627A1B9AEA9C00DC61C4 /* EditContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C762791B9AEA9C00DC61C4 /* EditContactViewController.m */; };
+		F0CB92651B9621FD00C3344B /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB92641B9621FD00C3344B /* AddContactViewController.m */; };
+		F0CB92681B962B6400C3344B /* ConatctListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB92671B962B6400C3344B /* ConatctListTableViewController.m */; };
+		F0CED5A41B97654800BA4797 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CED5A31B97654800BA4797 /* Contact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,22 @@
 		F07D9B481B937D9A00203AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F07D9B4A1B937D9A00203AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F07D9B4B1B937D9A00203AC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F07D9B4D1B937D9A00203AC5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F07D9B4E1B937D9A00203AC5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F07D9B511B937D9A00203AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F07D9B531B937D9A00203AC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F07D9B561B937D9A00203AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F07D9B5C1B937D9A00203AC5 /* MyContactListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyContactListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07D9B611B937D9A00203AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F07D9B621B937D9A00203AC5 /* MyContactListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyContactListTests.m; sourceTree = "<group>"; };
+		F0C5DD7B1B98D0590011D739 /* ViewContantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewContantViewController.h; sourceTree = "<group>"; };
+		F0C5DD7C1B98D0590011D739 /* ViewContantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewContantViewController.m; sourceTree = "<group>"; };
+		F0C762781B9AEA9C00DC61C4 /* EditContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditContactViewController.h; sourceTree = "<group>"; };
+		F0C762791B9AEA9C00DC61C4 /* EditContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditContactViewController.m; sourceTree = "<group>"; };
+		F0CB92631B9621FD00C3344B /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		F0CB92641B9621FD00C3344B /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		F0CB92661B962B6400C3344B /* ConatctListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConatctListTableViewController.h; sourceTree = "<group>"; };
+		F0CB92671B962B6400C3344B /* ConatctListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConatctListTableViewController.m; sourceTree = "<group>"; };
+		F0CED5A21B97654800BA4797 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		F0CED5A31B97654800BA4797 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +95,20 @@
 			children = (
 				F07D9B4A1B937D9A00203AC5 /* AppDelegate.h */,
 				F07D9B4B1B937D9A00203AC5 /* AppDelegate.m */,
-				F07D9B4D1B937D9A00203AC5 /* ViewController.h */,
-				F07D9B4E1B937D9A00203AC5 /* ViewController.m */,
 				F07D9B501B937D9A00203AC5 /* Main.storyboard */,
+				F0C5DD7B1B98D0590011D739 /* ViewContantViewController.h */,
+				F0C5DD7C1B98D0590011D739 /* ViewContantViewController.m */,
+				F0C762781B9AEA9C00DC61C4 /* EditContactViewController.h */,
+				F0C762791B9AEA9C00DC61C4 /* EditContactViewController.m */,
 				F07D9B531B937D9A00203AC5 /* Images.xcassets */,
 				F07D9B551B937D9A00203AC5 /* LaunchScreen.xib */,
 				F07D9B461B937D9A00203AC5 /* Supporting Files */,
+				F0CB92631B9621FD00C3344B /* AddContactViewController.h */,
+				F0CB92641B9621FD00C3344B /* AddContactViewController.m */,
+				F0CB92661B962B6400C3344B /* ConatctListTableViewController.h */,
+				F0CB92671B962B6400C3344B /* ConatctListTableViewController.m */,
+				F0CED5A21B97654800BA4797 /* Contact.h */,
+				F0CED5A31B97654800BA4797 /* Contact.m */,
 			);
 			path = MyContactList;
 			sourceTree = "<group>";
@@ -219,9 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F07D9B4F1B937D9A00203AC5 /* ViewController.m in Sources */,
+				F0C7627A1B9AEA9C00DC61C4 /* EditContactViewController.m in Sources */,
+				F0CB92681B962B6400C3344B /* ConatctListTableViewController.m in Sources */,
+				F0CB92651B9621FD00C3344B /* AddContactViewController.m in Sources */,
+				F0CED5A41B97654800BA4797 /* Contact.m in Sources */,
 				F07D9B4C1B937D9A00203AC5 /* AppDelegate.m in Sources */,
 				F07D9B491B937D9A00203AC5 /* main.m in Sources */,
+				F0C5DD7D1B98D0590011D739 /* ViewContantViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +440,7 @@
 				F07D9B681B937D9A00203AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F07D9B691B937D9A00203AC5 /* Build configuration list for PBXNativeTarget "MyContactListTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +449,7 @@
 				F07D9B6B1B937D9A00203AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
