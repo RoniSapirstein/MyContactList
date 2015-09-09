@@ -10,6 +10,7 @@
 #import "Contact.h"
 #import "AddContactViewController.h"
 #import "ViewContantViewController.h"
+#import "AppDelegate.h"
 
 @interface ConatctListTableViewController ()
 
@@ -49,9 +50,17 @@
     
     self.contactList = [[NSMutableArray alloc] init];
     [self loadInitialData];
-
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    if ([delegate shouldRefreshMainView])
+        [self.tableView reloadData];
+    
+    [delegate setShouldRefreshMainView:NO];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -81,7 +90,13 @@
     return cell;
 }
 
+/*- (void)layoutSubviews {
+    [self refreshTableCells];
+}
 
+-(void) refreshTableCells{
+    
+}*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,16 +145,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   
-  //  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     ViewContantViewController* viewContant = (ViewContantViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ViewContant"];
+
+//    Contact* contact = self.contactList[indexPath.row];
+//    viewContant.contact = contact;
+  
+    viewContant.contact = self.contactList[indexPath.row];
     
- //   ViewContantViewController* viewContant = [[ViewContantViewController alloc]init];
-    Contact* contact = self.contactList[indexPath.row];
-    viewContant.contact = contact;
-    
-//    [self presentModalViewController:viewContant animated:YES];
     [self.navigationController pushViewController:viewContant animated:YES];
-    //presentModally
+
 }
 
 @end

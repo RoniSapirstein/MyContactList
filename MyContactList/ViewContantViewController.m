@@ -90,8 +90,14 @@
         
         dest.contact = self.contact;
     }
+    
+    
 }
 
+/*- (void)willMoveToParentViewController:(UIViewController *)parent{
+    if (parent != nil){
+        [parent refreshTableView];
+    }*/
 
 /*
 #pragma mark - Navigation

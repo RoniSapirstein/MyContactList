@@ -17,42 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lpp-e3-5xH">
-                                <rect key="frame" x="35" y="141" width="442" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LastName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISV-DY-MpA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LastName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISV-DY-MpA">
                                 <rect key="frame" x="35" y="233" width="442" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nwd-r1-Iiz">
-                                <rect key="frame" x="35" y="326" width="442" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hju-fs-jG6">
+                                <rect key="frame" x="35" y="423" width="442" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hju-fs-jG6">
-                                <rect key="frame" x="35" y="423" width="442" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-wA-Kfw">
+                                <rect key="frame" x="35" y="136" width="442" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-bH-TVt">
+                                <rect key="frame" x="35" y="324" width="442" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hju-fs-jG6" firstAttribute="top" secondItem="Nwd-r1-Iiz" secondAttribute="bottom" constant="67" id="1z4-1S-lkk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ISV-DY-MpA" secondAttribute="trailing" constant="107" id="4Cf-s2-Xy8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nwd-r1-Iiz" secondAttribute="trailing" constant="107" id="5YE-Vl-KjT"/>
-                            <constraint firstItem="Lpp-e3-5xH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="8cr-zy-cA3"/>
-                            <constraint firstItem="ISV-DY-MpA" firstAttribute="top" secondItem="Lpp-e3-5xH" secondAttribute="bottom" constant="62" id="E4m-it-9cX"/>
-                            <constraint firstItem="Nwd-r1-Iiz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="L6m-me-O8c"/>
-                            <constraint firstItem="Nwd-r1-Iiz" firstAttribute="top" secondItem="ISV-DY-MpA" secondAttribute="bottom" constant="63" id="LON-uu-4vZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iP2-wA-Kfw" secondAttribute="trailing" constant="107" id="C2t-RR-oQ7"/>
+                            <constraint firstItem="Ean-bH-TVt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="Kce-TC-Q6Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hju-fs-jG6" secondAttribute="trailing" constant="107" id="O7M-dS-EEX"/>
                             <constraint firstItem="hju-fs-jG6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="PHY-0c-u17"/>
                             <constraint firstItem="ISV-DY-MpA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="aa2-PY-BiW"/>
-                            <constraint firstItem="Lpp-e3-5xH" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="121" id="skk-SS-IFg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lpp-e3-5xH" secondAttribute="trailing" constant="107" id="wzn-Zn-Ogr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ean-bH-TVt" secondAttribute="trailing" constant="107" id="sJj-TQ-p3L"/>
+                            <constraint firstItem="iP2-wA-Kfw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="yts-dI-RZc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Contant" id="wQT-fv-fGr">
@@ -69,8 +64,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailAddress" destination="hju-fs-jG6" id="7Rv-Um-ytZ"/>
-                        <outlet property="firstName" destination="Lpp-e3-5xH" id="4Jy-GF-EnA"/>
+                        <outlet property="firstName" destination="iP2-wA-Kfw" id="JGD-nr-mjN"/>
                         <outlet property="lastName" destination="ISV-DY-MpA" id="T7q-r5-M6m"/>
+                        <outlet property="phoneNumber" destination="Ean-bH-TVt" id="dbe-Jo-adk"/>
                         <outlet property="saveButton" destination="7SK-5u-kaa" id="F7s-sk-wLI"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,7 @@
 #import "EditContactViewController.h"
 #import "Contact.h"
 #import "ViewContantViewController.h"
+#import "AppDelegate.h"
 
 @interface EditContactViewController ()
 
@@ -90,17 +91,30 @@
         return;
     
     
-    if(self.firstNameUITextField.text != self.contact.firstName)
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    if(sender != self.saveButton)
+        return;
+
+    if(self.firstNameUITextField.text != self.contact.firstName){
         self.contact.firstName = self.firstNameUITextField.text;
+        [delegate setShouldRefreshMainView:YES];
+    }
     
-    if(self.lastNameUITextField.text != self.contact.lastName)
+    if(self.lastNameUITextField.text != self.contact.lastName){
         self.contact.lastName = self.lastNameUITextField.text;
+        [delegate setShouldRefreshMainView:YES];
+    }
     
-    if (self.phoneNumberUITextField.text != self.contact.phoneNumber)
+    if (self.phoneNumberUITextField.text != self.contact.phoneNumber){
         self.contact.phoneNumber = self.phoneNumberUITextField.text;
+        [delegate setShouldRefreshMainView:YES];
+    }
     
-    if (self.emailAddressUITextField.text != self.contact.emailAddress)
+    if (self.emailAddressUITextField.text != self.contact.emailAddress){
         self.contact.emailAddress = self.emailAddressUITextField.text;
+        [delegate setShouldRefreshMainView:YES];
+    }
     
 }
 /*
