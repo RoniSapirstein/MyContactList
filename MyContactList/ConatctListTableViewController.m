@@ -1,4 +1,4 @@
-//
+    //
 //  ConatctListTableViewController.m
 //  MyContactList
 //
@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 
 @interface ConatctListTableViewController ()
+@property NSInteger viewedContactIndex;
 
 @property (strong, nonatomic) NSMutableArray* contactList;
 
@@ -26,40 +27,57 @@
     AddContactViewController* source = [segue sourceViewController];
     Contact* contact = source.contact;
     
-    if (contact != nil) {
-        
-        [self.contactList addObject:contact];
-        [self.tableView reloadData];
-    }
-    
+    [self insertContactToList:contact];
 }
 
+-(void)insertContactToList:(Contact*)contact{
+    
+    if (contact != nil && contact.firstName.length > 0) {
+        
+        NSUInteger newIndex = [_contactList indexOfObject:contact inSortedRange:(NSRange){ 0, [self.contactList count]} options:NSBinarySearchingInsertionIndex usingComparator:^NSComparisonResult(Contact* contact1, Contact* contact2){
+            return [contact1.firstName compare: contact2.firstName];
+        }];
+        
+        [_contactList insertObject:contact atIndex:newIndex];
+        [self.tableView reloadData];
+    }
+
+}
 
 -(void) loadInitialData {
+   
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"contactList.dat"];
+
+    NSMutableArray* cotactListFromFile = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    if(cotactListFromFile)
+        _contactList = cotactListFromFile;
     
-    Contact* contact1 = [[Contact alloc] init];
-    contact1.firstName = @"Roni";
-    contact1.lastName = @"Sapirstein";
-    contact1.phoneNumber = @"0544850955";
-    contact1.emailAddress = @"roni.binenfeld@gmail.com";
-    [self.contactList addObject:contact1];
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.contactList = _contactList;
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.contactList = [[NSMutableArray alloc] init];
+    _contactList = [[NSMutableArray alloc] init];
     [self loadInitialData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+ 
+    Contact* viewedContact = _contactList[_viewedContactIndex];
+        
+    if(viewedContact.contactChanged){
+        [_contactList removeObjectAtIndex: _viewedContactIndex];
+        [self insertContactToList:viewedContact];
+        _viewedContactIndex = 0;
+    }
+
+    [self.tableView reloadData];
     
-    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    if ([delegate shouldRefreshMainView])
-        [self.tableView reloadData];
-    
-    [delegate setShouldRefreshMainView:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,85 +93,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.contactList count];
+    return [_contactList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell"forIndexPath:indexPath];
     
-    Contact* contact = [self.contactList objectAtIndex:indexPath.row];
-    NSString* fullName = [[NSString alloc] initWithString:contact.firstName];
-    fullName = [fullName stringByAppendingString:@" "];
-    fullName = [fullName stringByAppendingString:contact.lastName];
-    cell.textLabel.text = fullName;
+    Contact* contact = [_contactList objectAtIndex:indexPath.row];
+    if (contact.firstName){
+        NSString* fullName = [[NSString alloc] initWithString:contact.firstName];
+        if (contact.lastName) {
+            fullName = [fullName stringByAppendingString:@" "];
+            fullName = [fullName stringByAppendingString:contact.lastName];
+        }
+        cell.textLabel.text = fullName;
+    }
     
     return cell;
 }
-
-/*- (void)layoutSubviews {
-    [self refreshTableCells];
-}
-
--(void) refreshTableCells{
-    
-}*/
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   
     ViewContantViewController* viewContant = (ViewContantViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ViewContant"];
-
-//    Contact* contact = self.contactList[indexPath.row];
-//    viewContant.contact = contact;
   
-    viewContant.contact = self.contactList[indexPath.row];
+    viewContant.contact = _contactList[indexPath.row];
+    _viewedContactIndex = indexPath.row;
     
     [self.navigationController pushViewController:viewContant animated:YES];
 
 }
+
 
 @end

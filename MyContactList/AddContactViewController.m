@@ -8,15 +8,11 @@
 
 #import "AddContactViewController.h"
 #import "AppDelegate.h"
+
 @interface AddContactViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *firstName;
-
-@property (weak, nonatomic) IBOutlet UITextField *lastName;
-
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-@property (weak, nonatomic) IBOutlet UITextField *emailAddress;
+
 @end
 
 @implementation AddContactViewController
@@ -37,20 +33,23 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-      
-    self.contact = [[Contact alloc] init];
     
-    if (self.firstName.text.length > 0 )
-        self.contact.firstName = self.firstName.text;
-        
-    if (self.lastName.text.length > 0 )
-        self.contact.lastName = self.lastName.text;
+    if (sender != _saveButton)
+        return;
+
+    _contact = [[Contact alloc] init];
     
-    if (self.phoneNumber.text.length > 0 )
-        self.contact.phoneNumber = self.phoneNumber.text;
+    if (super.firstNameTextField.text.length > 0 )
+        _contact.firstName = super.firstNameTextField.text;
         
-    if (self.emailAddress.text.length > 0 )
-        self.contact.emailAddress = self.emailAddress.text;
+    if (super.lastNameTextField.text.length > 0 )
+        _contact.lastName = super.lastNameTextField.text;
+    
+    if (super.phoneNumberTextField.text.length > 0 )
+        _contact.phoneNumber = super.phoneNumberTextField.text;
+        
+    if (super.emailAddressTextField.text.length > 0 )
+        _contact.emailAddress = super.emailAddressTextField.text;
     
 }
 

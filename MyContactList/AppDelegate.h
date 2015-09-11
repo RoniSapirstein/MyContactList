@@ -11,9 +11,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property BOOL shouldRefreshMainView;
-
+@property (strong, nonatomic) NSMutableArray* contactList;
 
 @end
 

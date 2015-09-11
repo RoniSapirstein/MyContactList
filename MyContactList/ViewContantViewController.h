@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Contact.h"
+#import "ContactViewController.h"
 
-@interface ViewContantViewController : UIViewController
+@interface ViewContantViewController : ContactViewController
 
 -(IBAction)unwinedToViewContact:(UIStoryboardSegue*)segue;
 
